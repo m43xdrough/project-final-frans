@@ -1,0 +1,553 @@
+{
+	"info": {
+		"_postman_id": "038379c7-205a-46d7-bcef-a9598d125093",
+		"name": "Training Dibimbing Final Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15972965"
+	},
+	"item": [
+		{
+			"name": "GetMaterials",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "namabarang",
+							"value": "ADIDAS",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/materials",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"materials"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetMembers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/members?search=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"members"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get TResep",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/treceipts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"treceipts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Trans SO",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"soID\": 53,\r\n    \"soTransNo\": \"TSO00002/03/23\",\r\n    \"soTransDate\": \"2023-03-06\",\r\n    \"soSubtotal\": \"0\",\r\n    \"soTotalDisc\": \"0\",\r\n    \"soTotalPPN\": \"0\",\r\n    \"soGrandTotal\": \"0\",\r\n    \"soReceipt_Id\": 34,\r\n    \"receipt\": {\r\n        \"receiptID\": 34,\r\n        \"receiptNumber\": \"RSP0074408025\",\r\n        \"receiptDate\": \"2023-03-02\",\r\n        \"receiptSpherisr\": \"-00.75\",\r\n        \"receiptSpherisl\": \"-00.75\",\r\n        \"receiptCylinderr\": \"-00.75\",\r\n        \"receiptCylinderl\": \"-00.75\",\r\n        \"receiptAdditionr\": \"\",\r\n        \"receiptAdditionl\": \"00.00\",\r\n        \"receiptAxisr\": \"170\",\r\n        \"receiptAxisl\": \"115\",\r\n        \"receiptMemberID\": 20,\r\n        \"member\": {\r\n            \"memberID\": 20,\r\n            \"memberCode\": \"3087877845\",\r\n            \"memberName\": \"Ms. Florida Erdman\",\r\n            \"memberBirthdate\": \"1987-01-12\",\r\n            \"memberSex\": \"L\",\r\n            \"memberAddress\": \"Jl Kenanga\",\r\n            \"memberCity\": \"Depok\",\r\n            \"memberProvince\": \"JAWA TIMUR\",\r\n            \"memberEmail\": \"bfunk@gmail.com\",\r\n            \"memberPhone\": \"+6281524234248\"\r\n        }\r\n    },\r\n    \"transdetail\": [\r\n        {\r\n            \"itemID\": 48,\r\n            \"itemNo\": 1,\r\n            \"itemCode\": \"MB90392332\",\r\n            \"itemDescription\": \"FRAME ADIDAS A1\",\r\n            \"itemPrice\": \"500000\",\r\n            \"itemQty\": \"1\",\r\n            \"itemDisc\": \"0\",\r\n            \"itemNDisc\": \"0\",\r\n            \"itemPPN\": \"10\",\r\n            \"itemNPPN\": \"50000\",\r\n            \"itemTotal\": \"550000\"\r\n        },\r\n        {\r\n            \"itemID\": 49,\r\n            \"itemNo\": 1,\r\n            \"itemCode\": \"MB90392333\",\r\n            \"itemDescription\": \"FRAME ADIDAS A1\",\r\n            \"itemPrice\": \"500000\",\r\n            \"itemQty\": \"1\",\r\n            \"itemDisc\": \"0\",\r\n            \"itemNDisc\": \"0\",\r\n            \"itemPPN\": \"10\",\r\n            \"itemNPPN\": \"50000\",\r\n            \"itemTotal\": \"550000\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/transso/53",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"transso",
+						"53"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put Trans SO",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"soID\": 53,\r\n    \"soTransNo\": \"TSO00002/03/23\",\r\n    \"soTransDate\": \"2023-03-06\",\r\n    \"soSubtotal\": \"0\",\r\n    \"soTotalDisc\": \"0\",\r\n    \"soTotalPPN\": \"0\",\r\n    \"soGrandTotal\": \"0\",\r\n    \"soReceipt_Id\": 34,\r\n    \"receipt\": {\r\n        \"receiptID\": 34,\r\n        \"receiptNumber\": \"RSP0074408025\",\r\n        \"receiptDate\": \"2023-03-02\",\r\n        \"receiptSpherisr\": \"-00.75\",\r\n        \"receiptSpherisl\": \"-00.75\",\r\n        \"receiptCylinderr\": \"-00.75\",\r\n        \"receiptCylinderl\": \"-00.75\",\r\n        \"receiptAdditionr\": \"\",\r\n        \"receiptAdditionl\": \"00.00\",\r\n        \"receiptAxisr\": \"170\",\r\n        \"receiptAxisl\": \"115\",\r\n        \"receiptMemberID\": 20,\r\n        \"member\": {\r\n            \"memberID\": 20,\r\n            \"memberCode\": \"3087877845\",\r\n            \"memberName\": \"Ms. Florida Erdman\",\r\n            \"memberBirthdate\": \"1987-01-12\",\r\n            \"memberSex\": \"L\",\r\n            \"memberAddress\": \"Jl Kenanga\",\r\n            \"memberCity\": \"Depok\",\r\n            \"memberProvince\": \"JAWA TIMUR\",\r\n            \"memberEmail\": \"bfunk@gmail.com\",\r\n            \"memberPhone\": \"+6281524234248\"\r\n        }\r\n    },\r\n    \"transdetail\": [\r\n        {\r\n            \"itemID\": 48,\r\n            \"itemNo\": 1,\r\n            \"itemCode\": \"MB90392332\",\r\n            \"itemDescription\": \"FRAME ADIDAS A1\",\r\n            \"itemPrice\": \"500000\",\r\n            \"itemQty\": \"1\",\r\n            \"itemDisc\": \"0\",\r\n            \"itemNDisc\": \"0\",\r\n            \"itemPPN\": \"10\",\r\n            \"itemNPPN\": \"50000\",\r\n            \"itemTotal\": \"550000\"\r\n        },\r\n        {\r\n            \"itemID\": 49,\r\n            \"itemNo\": 1,\r\n            \"itemCode\": \"MB90392333\",\r\n            \"itemDescription\": \"FRAME ADIDAS A1\",\r\n            \"itemPrice\": \"500000\",\r\n            \"itemQty\": \"1\",\r\n            \"itemDisc\": \"0\",\r\n            \"itemNDisc\": \"0\",\r\n            \"itemPPN\": \"10\",\r\n            \"itemNPPN\": \"50000\",\r\n            \"itemTotal\": \"550000\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/transso/53",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"transso",
+						"53"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Material ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/materials/45",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"materials",
+						"45"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Member ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/members/28",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"members",
+						"28"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get TResep ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/treceipts/31",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"treceipts",
+						"31"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Material",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"materialDescription\": \"FRAME ADIDAS A1\",\r\n    \"materialPrice\": \"750000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/materials",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"materials"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put Material",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"materialCode\": \"MB90392338\",\r\n    \"materialDescription\": \"FRAME ADIDAS A1\",\r\n    \"materialPrice\": \"750001\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/materials/45",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"materials",
+						"45"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Members",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"memberName\": \"Budi Sulaiman\",\r\n    \"memberBirthdate\": \"1998-08-01\",\r\n    \"memberSex\": \"L\",\r\n    \"memberAddress\": \"Kemang \",\r\n    \"memberCity\": \"Jakarta Selatan\",\r\n    \"memberProvince\": \"DKI Jakarta\",\r\n    \"memberEmail\": \"budi.sulaimw22an21@gmail.com\",\r\n    \"memberPhone\": \"+6285641236548\",\r\n    \"memberPassword\": \"+6285641236548\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/members",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"members"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put Member",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"memberCode\": \"CU91747693\",\r\n    \"memberName\": \"Budi Sulaiman\",\r\n    \"memberBirthdate\": \"1998-08-01\",\r\n    \"memberSex\": \"L\",\r\n    \"memberAddress\": \"Kemang Utara E no 52 B, Jalan Bangka XI\",\r\n    \"memberCity\": \"Jakarta Selatan\",\r\n    \"memberProvince\": \"DKI Jakarta\",\r\n    \"memberEmail\": \"budi.sulaiman2A@gmail.com\",\r\n    \"memberPhone\": \"+6285641236548\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/members/29",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"members",
+						"29"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post TResep",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"receiptSpherisr\": \"-01.00\",\r\n    \"receiptSpherisl\": \"-00.25\",\r\n    \"receiptCylinderr\": \"-00.50\",\r\n    \"receiptCylinderl\": \"-01.00\",\r\n    \"receiptAdditionr\": \"00.25\",\r\n    \"receiptAdditionl\": \"00.00\",\r\n    \"receiptAxisr\": \"170\",\r\n    \"receiptAxisl\": \"150\",\r\n    \"receiptMemberID\": 9\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/treceipts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"treceipts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post TransSO",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n            \"soID\": 50,\r\n            \"soTransNo\": \"TSO00037/03/23\",\r\n            \"soTransDate\": \"2023-03-06\",\r\n            \"soSubtotal\": \"0\",\r\n            \"soTotalDisc\": \"0\",\r\n            \"soTotalPPN\": \"0\",\r\n            \"soGrandTotal\": \"0\",\r\n            \"soReceipt_Id\": 34,\r\n            \"receipt\": {\r\n                \"receiptID\": 34,\r\n                \"receiptNumber\": \"RSP0074408025\",\r\n                \"receiptDate\": \"2023-03-02\",\r\n                \"receiptSpherisr\": \"-00.75\",\r\n                \"receiptSpherisl\": \"-00.75\",\r\n                \"receiptCylinderr\": \"-00.75\",\r\n                \"receiptCylinderl\": \"-00.75\",\r\n                \"receiptAdditionr\": \"\",\r\n                \"receiptAdditionl\": \"00.00\",\r\n                \"receiptAxisr\": \"170\",\r\n                \"receiptAxisl\": \"115\",\r\n                \"receiptMemberID\": 20,\r\n                \"member\": {\r\n                    \"memberID\": 20,\r\n                    \"memberCode\": \"3087877845\",\r\n                    \"memberName\": \"Ms. Florida Erdman\",\r\n                    \"memberBirthdate\": \"1987-01-12\",\r\n                    \"memberSex\": \"L\",\r\n                    \"memberAddress\": \"Jl Kenanga\",\r\n                    \"memberCity\": \"Depok\",\r\n                    \"memberProvince\": \"JAWA TIMUR\",\r\n                    \"memberEmail\": \"bfunk@gmail.com\",\r\n                    \"memberPhone\": \"+6281524234248\"\r\n                }\r\n            },\r\n            \"transdetail\": [\r\n                {\r\n                    \"itemID\": 42,\r\n                    \"itemNo\": 1,\r\n                    \"itemCode\": \"1300000000000\",\r\n                    \"itemDescription\": \"FT28 VIS 1.5 LM2.0\",\r\n                    \"itemPrice\": \"500000\",\r\n                    \"itemQty\": \"1\",\r\n                    \"itemDisc\": \"0\",\r\n                    \"itemNDisc\": \"0\",\r\n                    \"itemPPN\": \"10\",\r\n                    \"itemNPPN\": \"50000\",\r\n                    \"itemTotal\": \"550000\"\r\n                },\r\n                {\r\n                    \"itemID\": 43,\r\n                    \"itemNo\": 1,\r\n                    \"itemCode\": \"1300000000001\",\r\n                    \"itemDescription\": \"FT28 VIS 1.5 LM2.0\",\r\n                    \"itemPrice\": \"500000\",\r\n                    \"itemQty\": \"1\",\r\n                    \"itemDisc\": \"0\",\r\n                    \"itemNDisc\": \"0\",\r\n                    \"itemPPN\": \"10\",\r\n                    \"itemNPPN\": \"50000\",\r\n                    \"itemTotal\": \"550000\"\r\n                }\r\n            ]\r\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/transso",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"transso"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put TResep",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"receiptSpherisr\": \"-01.00\",\r\n    \"receiptSpherisl\": \"-00.25\",\r\n    \"receiptCylinderr\": \"-00.50\",\r\n    \"receiptCylinderl\": \"-01.00\",\r\n    \"receiptAdditionr\": \"00.25\",\r\n    \"receiptAdditionl\": \"00.00\",\r\n    \"receiptAxisr\": \"170\",\r\n    \"receiptAxisl\": \"150\"\r\n    \r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/treceipts/40",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"treceipts",
+						"40"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Material",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/materials/45",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"materials",
+						"45"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Member",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/members/30",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"members",
+						"30"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE TResep",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/treceipts/40",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"treceipts",
+						"40"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE TransSO",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/transso/52",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"transso",
+						"52"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
