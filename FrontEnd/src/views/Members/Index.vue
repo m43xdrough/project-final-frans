@@ -1,4 +1,6 @@
 <template>
+    <div class="d-flex justify-space-between flex-wrap">
+        <div>
     <v-btn color="info" style="margin-bottom: 10px;" to="/members/create">
         Add Member
     </v-btn>
@@ -8,6 +10,23 @@
     <v-btn color="primary" style="margin-left: 10px; margin-bottom: 10px;" @click="dialog = true">
         Import Member
     </v-btn>
+    </div>
+        <v-card
+            color="grey-lighten-3"
+        >
+            <v-card-text style="width: 400px;">
+                <v-text-field
+                    density="compact"
+                    variant="solo"
+                    label="Search customers"
+                    append-inner-icon="mdi-magnify"
+                    single-line
+                    hide-details
+                    v-on:keyup="handleSearch"
+                ></v-text-field>
+            </v-card-text>
+        </v-card>
+    </div>
     <v-table>
         <thead>
             <tr>
@@ -81,8 +100,8 @@ export default {
         members: []
     }),
     methods: {
-        handleMembers() {
-            sendRequest('GET', `${import.meta.env.VITE_APP_BACKEND_HOST}/api/v1/members`)
+        handleMembers(url = `${import.meta.env.VITE_APP_BACKEND_HOST}/api/v1/members`) {
+            sendRequest('GET', url)
                 .then(res => {
 
                     this.members = res.payload
@@ -154,7 +173,7 @@ export default {
                         const headers = ["Name", "BirthDate", "Address", "MemberCity", "MobilePhone", "Email"]
                         const result = rows[0]?.filter((header, i) => header === headers[i] ? true : false)
                         if (result.length !== 6) {
-                            alert(result.length)
+                            
                             alert('Template excel tidak sesuai, mohon download template excel terlebih dahulu')
                             break
                         }
@@ -190,6 +209,11 @@ export default {
 
             this.handleMembers()
             this.dialog = false
+        },
+        handleSearch(e) {
+            if (e.keyCode === 13) {
+                this.handleMembers(`${import.meta.env.VITE_APP_BACKEND_HOST}/api/v1/members?search=${e.target.value}`)
+            } 
         }
     }
 }
